@@ -8,11 +8,14 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# 起开发环境 0.0.0.0:8080 (localhost:8080)
 npm run dev
 
-# build for production with minification
-npm run build
+# 线上环境构建
+sh ./build/deploy 
+
+# 测试环境构建
+sh ./build/deploy test_build
 
 # build for production and view the bundle analyzer report
 npm run build --report

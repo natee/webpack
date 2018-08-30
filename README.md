@@ -5,9 +5,22 @@
 > This template is Vue 2.0 compatible.
 
 ## 更新内容
- - 引入axios
+ - 引入axios，详见`api/index.js`，按需修改
  - 集成less
- - 目录结构增强
+ - 目录结构增强，区分`pages`和`components`
+ - 修改部署方式
+   - 当前上线方式为线上机器构建，所以原有构建方式在构建时会导致线上服务不可用，故更新了部署方式
+   - 增加测试环境的部署脚本
+
+### 开发
+- `npm run dev`: 保持不变
+
+### 构建测试环境
+- `sh ./build/deploy.sh test_build`: 构建测试环境代码
+
+### 构建线上环境
+- `sh ./build/deploy.sh`: 构建线上环境代码
+
 
 ## Documentation
 
@@ -26,13 +39,7 @@ $ npm install
 $ npm run dev
 ```
 
-This will scaffold the project using the `master` branch. If you wish to use the latest version of the webpack template, do the following instead:
-
-``` bash
-$ vue init natee/webpack#develop my-project
-```
-
-:warning: **The develop branch is not considered stable and can contain bugs or not build at all, so use at your own risk.**
+This will scaffold the project using the `master` branch.
 
 The development server will run on port 8080 by default. If that port is already in use on your machine, the next free port will be used.
 
@@ -45,7 +52,7 @@ The development server will run on port 8080 by default. If that port is already
   - Lint-on-save with ESLint
   - Source maps
 
-- `npm run build`: Production ready build.
+- [已废弃]`npm run build`: Production ready build.
   - JavaScript minified with [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony).
   - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
   - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
