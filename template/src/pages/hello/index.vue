@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <p>{{msg}}</p>
+    <p>\{{msg}}</p>
     <HelloWorld></HelloWorld>
   </div>
 </template>
